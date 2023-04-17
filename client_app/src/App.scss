@@ -1,0 +1,108 @@
+@use "variables";
+
+body {
+  height: 100vh;
+}
+
+html,
+#root {
+  height: auto;
+}
+
+input,
+button {
+  border: 0;
+  background: transparent;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a:visited {
+  color: inherit;
+}
+
+svg {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+span,
+p {
+  color: #171725;
+}
+
+.tippy-box {
+  background-color: unset !important;
+  border-radius: unset !important;
+  color: black !important;
+
+  .tippy-content {
+    margin-top: 5px;
+    padding: 0 !important;
+  }
+
+  .tippy-arrow {
+    color: white;
+    box-shadow: rgb(22 23 24 / 35%) 0px 10px 38px -10px,
+      rgb(22 23 24 / 20%) 0px 10px 20px -15px;
+    z-index: 2;
+  }
+}
+
+div > .react-datepicker {
+  border: none;
+  .react-datepicker__month-container {
+    .react-datepicker__header {
+      background-color: transparent;
+      border-bottom: none;
+    }
+    .react-datepicker__day--selected,
+    .react-datepicker__day--keyboard-selected {
+      background-color: var(--colors-violet400);
+    }
+  }
+}
+
+.transactionModalSwiper {
+  background: var(--colors-appBackground);
+  padding: 30px !important;
+  height: 440px !important;
+  border-radius: 20px;
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fractio {
+    bottom: -5px;
+  }
+
+  .swiper-slide {
+    min-width: 300px;
+    border-radius: var(--radii-xl2);
+    height: fit-content;
+    height: 100%;
+
+    & > div {
+      height: 100%;
+    }
+
+    div {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
+
+.Toastify__toast-container {
+  z-index: 300 !important;
+  pointer-events: all;
+}

@@ -1,0 +1,99 @@
+@import-sanitize;
+@import-normalize;
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/Epilogue-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-Thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-ExtraLight.ttf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-ExtraBold.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: local("Epilogue"), url(./assets/fonts/static/Epilogue-Black.ttf);
+  font-weight: 900;
+}
+
+* {
+  font-family: "Epilogue";
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  vertical-align: text-top;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 25px;
+  line-height: 38px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+}

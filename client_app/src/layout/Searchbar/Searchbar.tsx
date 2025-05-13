@@ -92,6 +92,11 @@ const Searchbar = () => {
               <Link
                 to={`/campaigns?search=${text}`}
                 onClick={() => setOpen(false)}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  textDecorationLine: "underline",
+                }}
               >
                 {text ? "See all projects" : "Go to search page"}
               </Link>
@@ -101,10 +106,9 @@ const Searchbar = () => {
             </PopoverContentHeader>
             {results.length === 0 && !isInitial && <h2>No results.</h2>}
             {isInitial && (
-              <h2>
-                <Search size="40px" />
-                Type a name...
-              </h2>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <h2 style={{ lineHeight: 1 }}>Search by name...</h2>
+              </div>
             )}
             <SearchResults
               hide={!text}

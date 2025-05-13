@@ -6,7 +6,7 @@ export const getValueFromTheme = (themeKey: any, property: string): any => {
   )?.value;
 };
 
-export const STORAGE_URL = "http://localhost:8000";
+export const STORAGE_URL = `${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/project-pictures/`;
 
 export const CATEGORIES = [
   "Animals",

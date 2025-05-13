@@ -17,7 +17,7 @@ const TransactionsTab = ({ projectId }: { projectId: string | undefined }) => {
           .from("transactions")
           .select("*")
           .eq("projectId", projectId)
-          .order("created_at", { ascending: false });
+          .order("createdAt", { ascending: false });
 
         if (data) {
           setTransactions(data.map((item, index) => ({ ...item, index })));
@@ -91,13 +91,13 @@ const columns = [
   },
   {
     Header: "Date",
-    accessor: "created_at",
+    accessor: "createdAt",
     maxWidth: 100,
     Cell: ({ cell }: { cell: any }) => (
       <div>
-        {cell.row.original["created_at"].split("T")[0] +
+        {cell.row.original["createdAt"].split("T")[0] +
           " " +
-          cell.row.original["created_at"].split("T")[1].split(".")[0]}
+          cell.row.original["createdAt"].split("T")[1].split(".")[0]}
       </div>
     ),
   },

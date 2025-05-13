@@ -10,14 +10,14 @@ const CampaignCard = ({
   imageSrc = "https://i.imgur.com/5Y6aT02.jpeg",
   title = "Card test 1",
   description = "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-  progress = 1200,
+  progress = 0,
   goal = "1800",
   backersNum = 12,
   authorName = "Marian Andrei",
   authorId = "-2",
   onClick = () => {},
   categories = ["Campaign"],
-  endDate = "2022-12-25T123",
+  endDate = "2029-12-25T123",
 }) => {
   return (
     <Card>

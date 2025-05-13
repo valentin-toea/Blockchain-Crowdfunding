@@ -141,11 +141,11 @@ export const uploadChanges =
     if (!images.length) return;
 
     const getBucketResponse = await supabase.storage.getBucket(
-      "projectPictures"
+      "project-pictures"
     );
 
     if (getBucketResponse.error) {
-      await supabase.storage.createBucket("projectPictures", { public: true });
+      await supabase.storage.createBucket("project-pictures", { public: true });
     }
 
     let imageLinks: string[] = [];
@@ -154,7 +154,7 @@ export const uploadChanges =
     await Promise.all(
       images.map(async (image, index) => {
         const { data, error } = await supabase.storage
-          .from("projectPictures")
+          .from("project-pictures")
           .upload(`public/${uuid()}.png`, image);
 
         if (error) {

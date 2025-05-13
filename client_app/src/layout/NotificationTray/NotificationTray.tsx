@@ -30,8 +30,8 @@ const NotificationTray = () => {
 
   useEffect(() => {
     if (userProfile.id)
-      dispatch(notificationActions.fetchNotifications(userProfile.id));
-  }, [userProfile.id, dispatch]);
+      dispatch(notificationActions.fetchNotifications(userProfile.userId));
+  }, [userProfile.userId, dispatch]);
 
   useEffect(() => {
     return () => {

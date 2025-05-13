@@ -134,6 +134,7 @@ const RewardsColumn = ({ rewards = [] }: { rewards: ProjectReward[] }) => {
             setSelected={() => setSelected(index)}
             onContinue={handleRewardDonate}
             displaySelectScreen={index !== selected}
+            isEditable={false}
           />
         ))}
         {rewards.length > 2 && (

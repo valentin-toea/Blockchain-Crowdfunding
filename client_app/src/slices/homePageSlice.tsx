@@ -61,7 +61,7 @@ const getAllProjects = createAsyncThunk("homePage/getAllProjects", async () => {
   let { data: projects, error } = await supabase
     .from("projects")
     .select(`*, user: profiles!userId(*)`)
-    .order("created_at", { ascending: false })
+    .order("createdAt", { ascending: false })
     .limit(10);
   return projects;
 });

@@ -74,18 +74,24 @@ const CreateProjectPage = ({ editMode = false }) => {
           .single();
         if (!error && data) {
           dispatch(editProjectActions.loadData(data));
+
           const savedImages = [data.mainImage, ...data.images];
           const finalImages = [];
-          for (let i = 0; i < savedImages.length; i++) {
-            const response = await fetch(STORAGE_URL + savedImages[i]);
-            // here image is url/location of image
-            const blob = await response.blob();
-            const file = new File([blob], `${savedImages[i]}.jpg`, {
-              type: blob.type,
-            });
-            finalImages.push(file);
+          try {
+            for (let i = 0; i < savedImages.length; i++) {
+              const response = await fetch(STORAGE_URL + savedImages[i]);
+              // here image is url/location of image
+              const blob = await response.blob();
+              const file = new File([blob], `${savedImages[i]}.jpg`, {
+                type: blob.type,
+              });
+              finalImages.push(file);
+            }
+            setImages(finalImages);
+          } catch (err) {
+            console.error(err);
+            setImages(finalImages);
           }
-          setImages(finalImages);
         }
 
         setLoading(false);

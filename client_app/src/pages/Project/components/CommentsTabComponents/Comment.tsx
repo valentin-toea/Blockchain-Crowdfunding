@@ -67,7 +67,7 @@ const Comment = ({
       .select("*, user: userId(*)")
       .eq("projectId", projectData?.id)
       .eq("parentCommentId", id)
-      .order("created_at", { ascending: true });
+      .order("createdAt", { ascending: true });
 
     if (!error) setLoading(false);
     if (data && !error) setReplies(data);
@@ -233,7 +233,7 @@ const Comment = ({
                         CREATOR
                       </b>
                     )}{" "}
-                    {item["created_at"].split("T")[0]}
+                    {item["createdAt"].split("T")[0]}
                   </p>
                   <div>{item.message}</div>
                 </div>

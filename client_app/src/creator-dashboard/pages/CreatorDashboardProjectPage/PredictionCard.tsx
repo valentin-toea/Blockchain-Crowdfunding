@@ -20,12 +20,12 @@ const PredictionCard = ({
       (async () => {
         const { data: projectData, error } = await supabase
           .from("projects")
-          .select("created_at,startDate, endDate, raisedAmount, goal")
+          .select("createdAt,startDate, endDate, raisedAmount, goal")
           .eq("id", projectId)
           .single();
 
         if (projectData && !error) {
-          const startDate = projectData["created_at"];
+          const startDate = projectData["createdAt"];
           const endDate = projectData.endDate;
 
           const daysLeft = datediff(new Date(), parseDate(endDate));
@@ -37,7 +37,7 @@ const PredictionCard = ({
 
           const { data, error: error2 } = await supabase
             .from("transactions")
-            .select("created_at, amount")
+            .select("createdAt, amount")
             .eq("projectId", projectId);
 
           if (data) {
@@ -61,7 +61,7 @@ const PredictionCard = ({
             }
 
             data?.forEach((item) => {
-              const itemDate = item["created_at"].split("T")[0];
+              const itemDate = item["createdAt"].split("T")[0];
               structuredData[itemDate] =
                 (structuredData[itemDate] || 0) + item.amount;
             });

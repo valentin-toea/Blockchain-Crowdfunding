@@ -23,7 +23,7 @@ const handleImageUpload = (file: File): Promise<string> =>
     formData.append("image", file);
 
     supabase.storage
-      .from("projectPictures")
+      .from("project-pictures")
       .upload(`public/${uuid()}.png`, file)
       .then(
         ({ data, error }) =>

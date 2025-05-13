@@ -43,15 +43,15 @@ const StatsTab = ({
 
     const { data, error } = await supabase
       .from("transactions")
-      .select("created_at, amount, userId")
+      .select("createdAt, amount, userId")
       .eq("projectId", projectId)
-      .gt("created_at", d.toISOString());
+      .gt("createdAt", d.toISOString());
 
     const { data: backersData, error: error2 } = await supabase
       .from("backedCampaigns")
-      .select("created_at, userId")
+      .select("createdAt, userId")
       .eq("projectId", projectId)
-      .gt("created_at", d.toISOString());
+      .gt("createdAt", d.toISOString());
 
     if (!error && data) {
       const structuredData: any = {};
@@ -59,19 +59,19 @@ const StatsTab = ({
 
       data?.forEach((item) => {
         structuredData[
-          DAYS[new Date(item["created_at"].split("T")[0]).getDay()]
+          DAYS[new Date(item["createdAt"].split("T")[0]).getDay()]
         ] =
           (structuredData[
-            DAYS[new Date(item["created_at"].split("T")[0]).getDay()]
+            DAYS[new Date(item["createdAt"].split("T")[0]).getDay()]
           ] || 0) + item.amount;
       });
 
       backersData?.forEach((item) => {
         structuredBakers[
-          DAYS[new Date(item["created_at"].split("T")[0]).getDay()]
+          DAYS[new Date(item["createdAt"].split("T")[0]).getDay()]
         ] = {
           ...(structuredBakers[
-            DAYS[new Date(item["created_at"].split("T")[0]).getDay()]
+            DAYS[new Date(item["createdAt"].split("T")[0]).getDay()]
           ] || {}),
           [item.userId]: true,
         };
@@ -104,15 +104,15 @@ const StatsTab = ({
 
     const { data, error } = await supabase
       .from("transactions")
-      .select("created_at, amount, userId")
+      .select("createdAt, amount, userId")
       .eq("projectId", projectId)
-      .gt("created_at", d.toISOString());
+      .gt("createdAt", d.toISOString());
 
     const { data: backersData, error: error2 } = await supabase
       .from("backedCampaigns")
-      .select("created_at, userId")
+      .select("createdAt, userId")
       .eq("projectId", projectId)
-      .gt("created_at", d.toISOString());
+      .gt("createdAt", d.toISOString());
 
     if (!error && data) {
       const structuredData: any = {};
@@ -126,7 +126,7 @@ const StatsTab = ({
       quarter3Date.setDate(quarter3Date.getDate() + 21);
 
       data?.forEach((item) => {
-        const itemDate = new Date(item["created_at"].split("T")[0]);
+        const itemDate = new Date(item["createdAt"].split("T")[0]);
         if (itemDate < quarter1Date) {
           structuredData[WEEKS[0]] =
             (structuredData[WEEKS[0]] || 0) + item.amount;
@@ -145,7 +145,7 @@ const StatsTab = ({
       });
 
       backersData?.forEach((item) => {
-        const itemDate = new Date(item["created_at"].split("T")[0]);
+        const itemDate = new Date(item["createdAt"].split("T")[0]);
         if (itemDate < quarter1Date) {
           structuredBakers[WEEKS[0]] = {
             ...(structuredBakers[WEEKS[0]] || {}),
@@ -188,12 +188,12 @@ const StatsTab = ({
 
     const { data, error } = await supabase
       .from("transactions")
-      .select("created_at, amount, userId")
+      .select("createdAt, amount, userId")
       .eq("projectId", projectId);
 
     const { data: backersData, error: error2 } = await supabase
       .from("backedCampaigns")
-      .select("created_at, userId")
+      .select("createdAt, userId")
       .eq("projectId", projectId);
 
     if (!error && data) {
@@ -212,13 +212,13 @@ const StatsTab = ({
       };
 
       data?.forEach((item) => {
-        const itemDate = item["created_at"].split("T")[0];
+        const itemDate = item["createdAt"].split("T")[0];
         structuredData[itemDate] =
           (structuredData[itemDate] || 0) + item.amount;
       });
 
       backersData?.forEach((item) => {
-        const itemDate = item["created_at"].split("T")[0];
+        const itemDate = item["createdAt"].split("T")[0];
         structuredBakers[itemDate] = {
           ...(structuredBakers[itemDate] || {}),
           [item.userId]: true,

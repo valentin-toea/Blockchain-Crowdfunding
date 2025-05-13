@@ -51,10 +51,7 @@ const WelcomeCard = () => {
           filter: " hue-rotate(80deg)",
         }}
       >
-        <source
-          src="https://thumbs.gfycat.com/UnfoldedRemorsefulJackal-mobile.mp4"
-          type="video/mp4"
-        />
+        <source src="banner.mp4" type="video/mp4" />
       </video>
     </Card>
   );

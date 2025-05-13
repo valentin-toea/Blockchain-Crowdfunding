@@ -1,20 +1,16 @@
-const main = async () => {
-  const transactionFactory = await hre.ethers.getContractFactory(
-    "Transactions"
-  );
-  const transactionContract = await transactionFactory.deploy();
+async function main() {
+  // We get the contract to deploy
+  const Crowdfunding = await ethers.getContractFactory("Crowdfunding");
+  const crowdfundingInstance = await Crowdfunding.deploy();
 
-  await transactionContract.deployed();
+  await crowdfundingInstance.deployed();
 
-  console.log("Transactions deployed to:", transactionContract.address);
-};
+  console.log("Greeter deployed to:", crowdfundingInstance.address);
+}
 
-(async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
     console.error(error);
     process.exit(1);
-  }
-})();
+  });

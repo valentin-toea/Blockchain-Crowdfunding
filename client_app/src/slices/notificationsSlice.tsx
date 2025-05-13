@@ -9,7 +9,7 @@ export interface Notification {
   message: string;
   userId?: string;
   projectId?: string;
-  created_at?: string;
+  createdAt?: string;
 }
 
 export interface NotificationState {
@@ -52,8 +52,8 @@ const fetchNotifications =
     let { data, error } = await supabase
       .from<Notification>("notifications")
       .select(`*`)
-      .contains("userId", [userId])
-      .order("created_at", { ascending: false })
+      .eq("userId", userId)
+      .order("createdAt", { ascending: false })
       .limit(20);
 
     if (!error && data) {

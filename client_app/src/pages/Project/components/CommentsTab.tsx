@@ -29,7 +29,7 @@ const CommentsTab = ({ canUserVote = true, remainingSumToVote = "" }) => {
       .select("*, user: userId(*)")
       .eq("projectId", projectData?.id)
       .is("parentCommentId", null)
-      .order("created_at", { ascending: false });
+      .order("createdAt", { ascending: false });
 
     if (data && !error) setComments(data);
   };
@@ -158,7 +158,7 @@ const CommentsTab = ({ canUserVote = true, remainingSumToVote = "" }) => {
                 ? comment.user.firstName + " " + comment.user.lastName
                 : comment.user.companyName
             }
-            date={comment["created_at"]}
+            date={comment["createdAt"]}
             message={comment.message}
             disableReply={userData.id === "-1"}
             commentUserId={comment.user.id}

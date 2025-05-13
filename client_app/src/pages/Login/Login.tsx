@@ -81,7 +81,7 @@ const LoginPage = styled("div", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  paddingTop: 300,
+  paddingTop: 100,
 });
 
 const Form = styled("form", {

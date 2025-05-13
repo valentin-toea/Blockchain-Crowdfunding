@@ -136,7 +136,7 @@ const SignupPage = styled("div", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  paddingTop: 200,
+  paddingTop: 50,
 });
 
 const Form = styled("form", {
